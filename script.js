@@ -26,7 +26,6 @@ window.onscroll = () => {
         };
     });
 
-    // Sticky Navbar
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 
@@ -50,7 +49,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 // Typed JS Animation
 const typed = new Typed('.text-animate', {
-    strings: ['MERN Stack Developer', 'Software Developer', 'MCA Graduate', 'Java Enthusiast'],
+    strings: ['MERN Stack Developer', 'Software Developer', 'Java Developer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,

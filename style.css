@@ -1,4 +1,3 @@
-/* ================= GLOBAL & VARIABLES ================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -17,7 +16,7 @@
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
-    --glass-bg: rgba(255, 255, 255, 0.05); /* Modern Glass Effect */
+    --glass-bg: rgba(255, 255, 255, 0.05); 
 }
 
 html {
@@ -28,18 +27,17 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    overflow-x: hidden; /* Better scrolling handling */
+    overflow-x: hidden; 
 }
-
-/* ================= HEADER ================= */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
-    background: rgba(8, 27, 41, 0.85); /* Slightly more transparent */
-    backdrop-filter: blur(15px); /* Stronger blur */
+    padding: 0 9%;                /* vertical padding remove kiya */
+    height: 70px;                 /* fixed navbar height */
+    background: rgba(8, 27, 41, 0.85); 
+    backdrop-filter: blur(15px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,18 +46,20 @@ body {
 }
 
 .logo {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    font-weight: 700;
+    display: flex;
+    align-items: center;          /* image vertically center */
     cursor: pointer;
     transition: 0.3s;
 }
 
-.logo span {
-    color: var(--main-color);
+.logo img {
+    max-height: 90px;             /* yahan logo size adjust karo */
+    width: auto;
+    display: block;
+    transition: transform 0.3s;
 }
 
-.logo:hover {
+.logo:hover img {
     transform: scale(1.05);
 }
 
@@ -72,7 +72,6 @@ body {
     position: relative;
 }
 
-/* Underline Animation for Navbar */
 .navbar a::after {
     content: '';
     position: absolute;
@@ -102,7 +101,6 @@ body {
     cursor: pointer;
 }
 
-/* ================= SECTIONS GLOBAL ================= */
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -118,16 +116,15 @@ section {
     color: var(--main-color);
 }
 
-/* ================= HOME SECTION ================= */
 .home {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5rem; /* Gap between text and image */
+    gap: 5rem; 
 }
 
 .home-content {
-    flex: 1; /* Better flex handling */
+    flex: 1; 
 }
 
 .home-content h3 {
@@ -140,7 +137,7 @@ section {
 }
 
 .home-content h1 {
-    font-size: clamp(3.5rem, 5vw, 5.6rem); /* Fluid Typography */
+    font-size: clamp(3.5rem, 5vw, 5.6rem);
     font-weight: 700;
     line-height: 1.2;
 }
@@ -152,7 +149,7 @@ section {
 .home-content p {
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
-    line-height: 1.6; /* Better readability */
+    line-height: 1.6; 
 }
 
 .social-media a {
@@ -206,7 +203,7 @@ section {
 
 .home-img img {
     width: 32vw;
-    min-width: 250px; /* Prevents image from getting too small */
+    min-width: 250px; 
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     border: 4px solid var(--main-color);
@@ -226,7 +223,7 @@ section {
     100% { transform: translateY(0); }
 }
 
-/* ================= ABOUT SECTION ================= */
+/*ABOUT SECTION */
 .about {
     display: flex;
     justify-content: center;
@@ -259,7 +256,8 @@ section {
     line-height: 1.6;
 }
 
-/* ================= SKILLS SECTION ================= */
+/* SKILLS SECTION */
+
 .skills {
     background: var(--bg-color);
 }
@@ -268,11 +266,11 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
-    justify-content: center; /* Centers skills on large screens */
+    justify-content: center; 
 }
 
 .skills-column {
-    flex: 1 1 35rem; /* Better flexing */
+    flex: 1 1 35rem; 
 }
 
 .title {
@@ -357,14 +355,14 @@ section {
     color: #000;
 }
 
-/* ================= PROJECTS SECTION (Improved Grid) ================= */
+/*PROJECTS SECTION*/
+
 .projects {
     background: var(--second-bg-color);
 }
 
 .projects-container {
     display: grid;
-    /* Auto-fit makes it responsive without media queries */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 2.5rem;
 }
@@ -439,7 +437,8 @@ section {
     color: #333;
 }
 
-/* ================= CONTACT SECTION ================= */
+/*CONTACT SECTION*/
+
 .contact {
     background: var(--bg-color);
 }
@@ -455,7 +454,7 @@ section {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1.5rem; /* Gap handles spacing instead of fixed % */
+    gap: 1.5rem; 
 }
 
 .contact form .input-box input,
@@ -471,7 +470,7 @@ section {
 }
 
 .contact form .input-box input {
-    flex: 1 1 48%; /* Responsive width */
+    flex: 1 1 48%; 
 }
 
 .contact form .input-box input:focus,
@@ -485,24 +484,23 @@ section {
     resize: none;
     margin: 1.5rem 0;
 }
-/* ================= IMPROVED FOOTER SECTION ================= */
+
+/*FOOTER SECTION*/
 .footer {
     background: var(--second-bg-color);
-    padding: 6rem 9% 3rem; /* Upar zyada space, niche thoda kam */
+    padding: 6rem 9% 3rem; 
     position: relative;
 }
 
-/* Footer Container - Flexbox for layout */
 .footer-content {
     display: flex;
-    flex-wrap: wrap; /* Screen choti hone par niche aayega */
+    flex-wrap: wrap; 
     justify-content: space-between;
     gap: 2.5rem;
 }
 
-/* Individual Column Styling */
 .footer-box {
-    flex: 1 1 25rem; /* Min width 250px, baaki fail jayega */
+    flex: 1 1 25rem; 
 }
 
 .footer-box h3 {
@@ -513,7 +511,6 @@ section {
     font-weight: 600;
 }
 
-/* Heading ke niche choti si neon line */
 .footer-box h3::before {
     content: '';
     position: absolute;
@@ -527,12 +524,11 @@ section {
 
 .footer-box p {
     font-size: 1.6rem;
-    color: #bdbdbd; /* Soft grey text */
+    color: #bdbdbd; 
     line-height: 1.6;
     margin-bottom: 2rem;
 }
 
-/* Social Icons Styling */
 .socials a {
     display: inline-flex;
     justify-content: center;
@@ -550,12 +546,11 @@ section {
 
 .socials a:hover {
     background: var(--main-color);
-    color: var(--second-bg-color); /* Icon ka color dark ho jayega */
+    color: var(--second-bg-color); 
     transform: translateY(-5px);
     box-shadow: 0 0 15px var(--main-color);
 }
 
-/* Links Styling */
 .footer-box ul {
     list-style: none;
 }
@@ -572,70 +567,64 @@ section {
     transition: 0.3s;
     display: flex;
     align-items: center;
-    gap: 1rem; /* Icon aur text ke beech gap */
+    gap: 1rem; 
 }
 
-/* Hover Effect for Links */
 .footer-box ul li a:hover {
     color: var(--main-color);
-    padding-left: 8px; /* Slide effect */
+    padding-left: 8px; 
 }
 
-/* Contact Icons color */
 .footer-box ul li i {
     color: var(--main-color);
     font-size: 1.8rem;
 }
 
-/* Footer Bottom Container */
 .footer-bottom {
     display: flex;
-    flex-direction: column; /* Text aur Icon ek ke niche ek aayenge */
-    justify-content: center; /* Vertical Center */
-    align-items: center;     /* Horizontal Center */
-    text-align: center;      /* Text ko bhi center karega */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center;      
     padding: 2rem 0;
-    gap: 1.5rem;             /* Text aur Icon ke beech space */
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Upar halki line */
+    gap: 1.5rem;             
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
     margin-top: 2rem;
     width: 100%;
 }
 
-/* Text Styling */
 .footer-bottom p {
     font-size: 1.5rem;
-    color: #bdbdbd; /* Light Grey text */
+    color: #bdbdbd; 
     font-weight: 400;
 }
 
 .footer-bottom p span {
-    color: var(--main-color); /* Name ko Neon Blue karega */
+    color: var(--main-color); 
     font-weight: 600;
 }
 
-/* Icon Styling (Button jaisa dikhega) */
 .footer-iconTop a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: var(--main-color); /* Neon Background */
+    background: var(--main-color);
     border-radius: 0.6rem;
     transition: 0.5s ease;
 }
 
 .footer-iconTop a i {
     font-size: 2.4rem;
-    color: var(--second-bg-color); /* Dark Icon Color */
+    color: var(--second-bg-color); 
 }
 
-/* Icon Hover Effect */
 .footer-iconTop a:hover {
-    box-shadow: 0 0 15px var(--main-color); /* Glow Effect */
-    transform: translateY(-5px); /* Thoda upar uthega */
+    box-shadow: 0 0 15px var(--main-color); 
+    transform: translateY(-5px); 
 }
 
-/* ================= RESPONSIVE DESIGN (Mobile) ================= */
+/* RESPONSIVE DESIGN (Mobile) */
 @media (max-width: 991px) {
     .footer {
         padding: 4rem 3% 2rem;
@@ -643,14 +632,11 @@ section {
 }
 
 @media (max-width: 768px) {
-    /* Mobile par content center hoga */
     .footer-content {
         flex-direction: column;
         text-align: center;
         gap: 3rem;
     }
-
-    /* Heading ki line ko center karne ke liye */
     .footer-box h3::before {
         left: 50%;
         transform: translateX(-50%);
@@ -658,27 +644,23 @@ section {
 
     .socials {
         display: flex;
-        justify-content: center; /* Icons center karo */
+        justify-content: center; 
         margin-bottom: 1rem;
     }
 
-    /* Links ko center align */
     .footer-box ul li, 
     .footer-box ul li a {
         justify-content: center;
     }
 
-    /* Bottom section ko stack karo */
     .footer-bottom {
-        flex-direction: column-reverse; /* Icon upar, text niche */
+        flex-direction: column-reverse; 
         gap: 2rem;
         text-align: center;
         margin-top: 2rem;
     }
 }
-/* ================= RESPONSIVE DESIGN (Important) ================= */
 
-/* Tablet (Laptop/Tabs) */
 @media (max-width: 991px) {
     .header { padding: 2rem 3%; }
     
@@ -688,13 +670,21 @@ section {
     
     .home-content h1 { font-size: 5rem; }
     
-    .home-img img { width: 45vw; } /* Bigger image on tablet */
+    .home-img img { width: 45vw; } 
 }
 
-/* Mobile Devices */
 @media (max-width: 768px) {
     #menu-icon { 
         display: block; 
+    }
+
+    .header {
+        padding: 0 5%;
+        height: 60px;   /* mobile navbar height */
+    }
+
+     .logo img {
+        max-height: 50px; /* mobile par logo chhota karo */
     }
 
     .navbar {
@@ -706,17 +696,12 @@ section {
         background: var(--bg-color);
         border-top: .1rem solid rgba(0,0,0,.2);
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
-        
-        /* Modern Slide Animation Logic */
         height: 0;
         overflow: hidden;
-        transition: height 0.4s ease; /* Requires JS to toggle height or class */
-        
-        /* Fallback if JS toggles display:block/none */
+        transition: height 0.4s ease;
         display: none; 
     }
     
-    /* Javascript class add karega 'active' */
     .navbar.active {
         display: block;
         height: auto;
@@ -727,13 +712,11 @@ section {
         display: block;
         font-size: 2rem;
         margin: 2rem 0;
-        text-align: center; /* Center links on mobile */
+        text-align: center; 
     }
     
-    /* Layouts ko Stack karna (Column) */
     .home {
-        flex-direction: column-reverse; /* Text pehle, Image baad mein (Optional) */
-        /* Normal: flex-direction: column; (Image top, text bottom) */
+        flex-direction: column-reverse;
         flex-direction: column;
         gap: 2rem;
         text-align: center;
@@ -762,11 +745,10 @@ section {
     }
     
     .about-content p {
-        text-align: justify; /* Keeps text neat */
+        text-align: justify; 
         padding: 0 1rem;
     }
 
-    /* Contact Form Mobile Fix */
     .contact form .input-box input {
         width: 100%;
         flex: 1 1 100%;
@@ -775,7 +757,6 @@ section {
 
 }
 
-/* Small Mobile Devices */
 @media (max-width: 450px) {
     html { font-size: 55%; }
     
@@ -786,4 +767,7 @@ section {
     .about-img img { width: 80vw; }
     
     .btn { padding: 1rem 2rem; }
+     .logo img {
+        max-height: 40px; /* aur chhota logo */
+    }
 }
