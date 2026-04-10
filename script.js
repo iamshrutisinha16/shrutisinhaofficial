@@ -57,15 +57,3 @@ const typed = new Typed('.text-animate', {
 });
 
 
-function sendToWhatsApp() {
-  let name = document.querySelector('input[name="name"]').value;
-  let message = document.querySelector('textarea[name="message"]').value;
-
-  let phone = "9693855983"; 
-
-  let url = "https://wa.me/" + phone + "?text="
-    + "Name: " + encodeURIComponent(name)
-    + "%0aMessage: " + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
