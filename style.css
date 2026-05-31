@@ -45,18 +45,18 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.logo {
+.logo{
     display: flex;
-    align-items: center;          /* image vertically center */
-    cursor: pointer;
-    transition: 0.3s;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
 }
 
-.logo img {
-    max-height: 90px;             /* yahan logo size adjust karo */
+.logo img{
+    height: 200px;
     width: auto;
+    object-fit: contain;
     display: block;
-    transition: transform 0.3s;
 }
 
 .logo:hover img {
@@ -684,7 +684,7 @@ section {
     }
 
      .logo img {
-        max-height: 50px; /* mobile par logo chhota karo */
+        max-height: 80px; /* mobile par logo chhota karo */
     }
 
     .navbar {
@@ -769,5 +769,87 @@ section {
     .btn { padding: 1rem 2rem; }
      .logo img {
         max-height: 40px; /* aur chhota logo */
+    }
+}
+
+/*our services*/
+/* SERVICES SECTION */
+
+.services{
+    background: var(--second-bg-color);
+    padding: 8rem 9% 5rem;
+}
+
+.services .heading{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+}
+
+.service-box{
+    background: var(--glass-bg);
+    border: .2rem solid rgba(255,255,255,.1);
+    border-radius: 2rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: .4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.service-box:hover{
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 20px rgba(0,171,240,.3);
+}
+
+.service-box i{
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.service-box h3{
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.service-box p{
+    color: var(--text-color);
+    opacity: .8;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.service-note{
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--main-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media(max-width:768px){
+
+    .services{
+        padding: 6rem 5% 4rem;
+    }
+
+    .services .heading{
+        font-size: 3rem;
+    }
+
+    .service-box{
+        padding: 2rem 1.5rem;
+    }
+
+    .service-box h3{
+        font-size: 1.6rem;
     }
 }
